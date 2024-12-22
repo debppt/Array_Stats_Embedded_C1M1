@@ -34,7 +34,7 @@
  *
  * @return <void> <justs print the statistics so no return data>
  */
-void print_statistics(char * arr, int n)
+void print_statistics(char * arr, int n);
 
 /**
  * @brief <Prints the array>
@@ -46,19 +46,19 @@ void print_statistics(char * arr, int n)
  *
  * @return <void> <just prints the array so no return data>
  */
-void print_array(char * arr, int n)
+void print_array(char * arr, int n);
 
 /**
  * @brief <Finds median of array>
  *
- * <Median is the middle element of array when written in ascending order. So **the array can be sorted and then the middle element is retue=rned>
+ * <Middle element of sorted array in case of odd number of elements or **average of two middle elements in case of even number of elements is returned. >
  *
  * @param <char * arr> <char pointer to the beginning of array>
  * @param <int n> <n is the size of array we are working with>
  *
  * @return <unsigned char> <returns a unsigned char value, the median>
  */
-float find_median(char * arr, int n)
+unsigned char find_median(char * arr, int n);
 
 /**
  * @brief <Finds mean of the array>
@@ -70,7 +70,7 @@ float find_median(char * arr, int n)
  *
  * @return <unsigned char> <returns a unsigned char value, the mean>
  */
-unsigned char find_mean(char * arr, int n)
+unsigned char find_mean(char * arr, int n);
 
 /**
  * @brief <Finds maximum element in array>
@@ -82,7 +82,7 @@ unsigned char find_mean(char * arr, int n)
  *
  * @return <unsigned char> <returns the unsigned char value, the maximum element>
  */
-unsigned char find_maximum(char * arr, int n)
+unsigned char find_maximum(char * arr, int n);
 
 /**
  * @brief <Finds minimum element in array>
@@ -94,19 +94,19 @@ unsigned char find_maximum(char * arr, int n)
  *
  * @return <unsigned char> <returns the unsigned char value, the minimum element>
  */
-unsigned char find_minimum(char * arr, int n)
+unsigned char find_minimum(char * arr, int n);
 
 /**
  * @brief <returns the sorted array>
  *
- * <returns the elements of the array written in a descending order>
+ * <prints the elements of the array after sorting in a descending order>
  *
  * @param <char * arr> <char pointer to the beginning of array>
  * @param <int n> <n is the size of array we are working with>
  *
  * @return <void> <sorts the array given so no return data>
  */
-void sort_array(char * arr, int n)
+void sort_array(char * arr, int n);
 
 
 #endif /* __STATS_H__ */
