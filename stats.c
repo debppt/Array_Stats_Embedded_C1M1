@@ -9,13 +9,13 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.c> 
+ * @brief <implementation of some functions on array to gain insights about data>
  *
- * <Add Extended Description Here>
+ * <we write functions to find mean, median, maximum, minimum of an array, to ***print the array and to sort the array >
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <DEBANGSHU PATNAIK>
+ * @date <22-12-2024>
  *
  */
 
@@ -34,10 +34,34 @@ void main() {
                               200, 122, 150, 90,   92,  87, 177, 244,
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
-
   /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+  void print_statistics(char* arr,int n)
+  {
+  }
 
+  void print_array(char* arr,int n)
+  {
+  }
+
+  unsigned char find_median(char* arr,int n)
+  {
+  }
+
+  unsigned char find_mean(char* arr,int n)
+  {
+  }
+
+  unsigned char find_maximum(char* arr,int n)
+  {
+  }
+
+  unsigned char find_minimum(char* arr,int n)
+  {
+  }
+
+  void sort_array(char* arr,int n)
+  {
+  }
 }
 
 /* Add other Implementation File Code Here */
