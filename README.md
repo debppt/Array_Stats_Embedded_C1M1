@@ -3,6 +3,13 @@ AUTHOR: DEBANGSHU PATNAIK
 FILES: stats.h stats.c and README.md
 
 CONTENTS: Functions to calculate statistics like mean, median, maximum, minimum of an input array, to print the input array and to sort the input array.
+print_statistics()
+print_array()
+find_median()
+find_mean()
+find_maximum()
+find_minimum()
+sort_array()
 
 COPYRIGHT:/******************************************************************************
  * Copyright (C) 2017 by Alex Fosdick - University of Colorado
