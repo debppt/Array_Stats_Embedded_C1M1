@@ -46,7 +46,12 @@ void print_statistics(char * arr, int n);
  *
  * @return <void> <just prints the array so no return data>
  */
-void print_array(char * arr, int n);
+void print_array(char* arr, int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%u ", (unsigned char)arr[i]);
+    }
+    printf("\n");
+}
 
 /**
  * @brief <Finds median of array>
@@ -58,7 +63,18 @@ void print_array(char * arr, int n);
  *
  * @return <unsigned char> <returns a unsigned char value, the median>
  */
-unsigned char find_median(char * arr, int n);
+unsigned char find_median(char* arr, int n) {
+    char temp[n];
+    for (int i = 0; i < n; i++) {
+        temp[i] = arr[i];
+    }
+    sort_array(temp, n);
+    if (n % 2 == 0) {
+        return (unsigned char)((temp[n / 2 - 1] + temp[n / 2]) / 2);
+    } else {
+        return (unsigned char)(temp[n / 2]);
+    }
+}
 
 /**
  * @brief <Finds mean of the array>
@@ -70,7 +86,13 @@ unsigned char find_median(char * arr, int n);
  *
  * @return <unsigned char> <returns a unsigned char value, the mean>
  */
-unsigned char find_mean(char * arr, int n);
+unsigned char find_mean(char* arr, int n) {
+    unsigned int sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += (unsigned char)arr[i];
+    }
+    return (unsigned char)(sum / n);
+}
 
 /**
  * @brief <Finds maximum element in array>
@@ -82,7 +104,15 @@ unsigned char find_mean(char * arr, int n);
  *
  * @return <unsigned char> <returns the unsigned char value, the maximum element>
  */
-unsigned char find_maximum(char * arr, int n);
+unsigned char find_maximum(char* arr, int n) {
+    unsigned char max = (unsigned char)arr[0];
+    for (int i = 1; i < n; i++) {
+        if ((unsigned char)arr[i] > max) {
+            max = (unsigned char)arr[i];
+        }
+    }
+    return max;
+}
 
 /**
  * @brief <Finds minimum element in array>
@@ -94,7 +124,15 @@ unsigned char find_maximum(char * arr, int n);
  *
  * @return <unsigned char> <returns the unsigned char value, the minimum element>
  */
-unsigned char find_minimum(char * arr, int n);
+unsigned char find_minimum(char* arr, int n) {
+    unsigned char min = (unsigned char)arr[0];
+    for (int i = 1; i < n; i++) {
+        if ((unsigned char)arr[i] < min) {
+            min = (unsigned char)arr[i];
+        }
+    }
+    return min;
+}
 
 /**
  * @brief <returns the sorted array>
@@ -106,7 +144,27 @@ unsigned char find_minimum(char * arr, int n);
  *
  * @return <void> <sorts the array given so no return data>
  */
-void sort_array(char * arr, int n);
+void sort_array(char* arr, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if ((unsigned char)arr[i] < (unsigned char)arr[j]) {//Desc order
+                char temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 #endif /* __STATS_H__ */
