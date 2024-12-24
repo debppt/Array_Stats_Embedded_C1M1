@@ -34,7 +34,13 @@
  *
  * @return <void> <justs print the statistics so no return data>
  */
-void print_statistics(char * arr, int n);
+void print_statistics(char* arr, int n) {
+    unsigned char a = find_median(arr, n);
+    unsigned char b = find_mean(arr, n);
+    unsigned char c = find_maximum(arr, n);
+    unsigned char d = find_minimum(arr, n);
+    printf("Median: %u\nMean: %u\nMaximum: %u\nMinimum: %u\n", a, b, c, d);
+}
 
 /**
  * @brief <Prints the array>
