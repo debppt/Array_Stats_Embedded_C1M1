@@ -162,15 +162,4 @@ void sort_array(char* arr, int n) {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 #endif /* __STATS_H__ */
