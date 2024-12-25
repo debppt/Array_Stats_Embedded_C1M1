@@ -27,6 +27,15 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
+//function declarations
+void print_statistics(char* arr, int n);
+void print_array(char* arr, int n);
+unsigned char find_median(char* arr, int n);
+unsigned char find_mean(char* arr, int n);
+unsigned char find_maximum(char* arr, int n);
+unsigned char find_minimum(char* arr, int n);
+void sort_array(char* arr, int n);
+
 void main() {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
@@ -45,3 +54,74 @@ void main() {
     print_array(test, SIZE);
 
 }
+
+//function definitions
+
+void print_statistics(char* arr, int n) {
+    unsigned char a = find_median(arr, n);
+    unsigned char b = find_mean(arr, n);
+    unsigned char c = find_maximum(arr, n);
+    unsigned char d = find_minimum(arr, n);
+    printf("Median: %u\nMean: %u\nMaximum: %u\nMinimum: %u\n", a, b, c, d);
+}
+
+void print_array(char* arr, int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%u ", (unsigned char)arr[i]);
+    }
+    printf("\n");
+}
+
+unsigned char find_median(char* arr, int n) {
+    char temp[n];
+    for (int i = 0; i < n; i++) {
+        temp[i] = arr[i];
+    }
+    sort_array(temp, n);
+    if (n % 2 == 0) {
+        return (unsigned char)((temp[n / 2 - 1] + temp[n / 2]) / 2);
+    } else {
+        return (unsigned char)(temp[n / 2]);
+    }
+}
+
+unsigned char find_mean(char* arr, int n) {
+    unsigned int sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += (unsigned char)arr[i];
+    }
+    return (unsigned char)(sum / n);
+}
+
+unsigned char find_maximum(char* arr, int n) {
+    unsigned char max = (unsigned char)arr[0];
+    for (int i = 1; i < n; i++) {
+        if ((unsigned char)arr[i] > max) {
+            max = (unsigned char)arr[i];
+        }
+    }
+    return max;
+}
+
+unsigned char find_minimum(char* arr, int n) {
+    unsigned char min = (unsigned char)arr[0];
+    for (int i = 1; i < n; i++) {
+        if ((unsigned char)arr[i] < min) {
+            min = (unsigned char)arr[i];
+        }
+    }
+    return min;
+}
+
+void sort_array(char* arr, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if ((unsigned char)arr[i] < (unsigned char)arr[j]) {//Desc order
+                char temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+
